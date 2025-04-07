@@ -7,6 +7,33 @@
         {
             BeispielobjekteAnlegen();
             Console.WriteLine(lieferungen.Count);
+
+
+
+
+            StreamWriter sw = new StreamWriter("Test.json");
+            int anzahl = lieferungen.Count();
+
+            sw.WriteLine("{");
+
+            sw.WriteLine($"\t \"anzahl\": {anzahl},");
+            sw.WriteLine($"\t \"lieferungen\":");
+
+            sw.WriteLine("\t [");
+
+            for(int i = 0; i < anzahl; i++)
+            {
+            sw.WriteLine("\t\t {");
+            sw.WriteLine($"\t\t\t \"datum\": \"{lieferungen.ElementAt(i).Datum}\",");
+            sw.WriteLine($"\t\t\t \"sendungsnummer\": \"{lieferungen.ElementAt(i).Sendungsnummer}\",");
+            sw.WriteLine($"\t\t\t \"plz\": \"{Convert.ToInt32(lieferungen.ElementAt(i).PLZ)}\",");
+            sw.WriteLine("\t\t },");
+            }
+
+            sw.WriteLine("\t ]");
+            sw.WriteLine("}");
+
+            sw.Close();
         }
 
         static void BeispielobjekteAnlegen()
