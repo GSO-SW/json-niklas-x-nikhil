@@ -1,12 +1,13 @@
+ 
 namespace Lieferverwaltung
 {
     public class Lieferung
     {
         private DateOnly datum;
         private string sendungsnummer;
-        private string plz;
+        private int plz;
 
-        public Lieferung(DateOnly datum, string sendungsnummer, string plz)
+        public Lieferung(DateOnly datum, string sendungsnummer, int plz)
         {
             this.datum = datum;
             this.sendungsnummer = sendungsnummer;
@@ -15,6 +16,6 @@ namespace Lieferverwaltung
         
         public DateOnly Datum { get { return datum; } }
         public string Sendungsnummer { get { return sendungsnummer; } }
-        public string PLZ { get { return plz; } }
+        public int PLZ { get { return plz; } }
     }
 }
