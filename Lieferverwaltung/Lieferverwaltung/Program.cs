@@ -26,8 +26,12 @@
             sw.WriteLine("\t\t {");
             sw.WriteLine($"\t\t\t \"datum\": \"{lieferungen.ElementAt(i).Datum}\",");
             sw.WriteLine($"\t\t\t \"sendungsnummer\": \"{lieferungen.ElementAt(i).Sendungsnummer}\",");
-            sw.WriteLine($"\t\t\t \"plz\": \"{Convert.ToInt32(lieferungen.ElementAt(i).PLZ)}\",");
-            sw.WriteLine("\t\t },");
+            sw.WriteLine($"\t\t\t \"plz\": \"{Convert.ToInt32(lieferungen.ElementAt(i).PLZ)}\"");
+            sw.WriteLine("\t\t }");
+                if( i < anzahl-1)
+                {
+                    sw.Write(",");
+                }
             }
 
             sw.WriteLine("\t ]");
